@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Introduction to programming, Part 1</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism/prism.css">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <main>
+
+    <hgroup>
+      <h1>Introduction to programming</h1>
+      <h2>There's a lot of code. Everywhere</h2>
+    </hgroup>
+
+<nav>
+  <p><a href="index.html">Main index</a></p>
+  <p>Next:<br><a href="lesson2.html">Variables</a></p>
+</nav>
+
+<p>A huge amount of software exists in the world, controlling the systems that enrich our lives. Some code is really obvious, such as operating systems like Windows, web sites, and video games. Some is not so obvious, for example the embedded code that controls our microwave, our thermostat, or our car engine.</p>
+
+<p>The exact format, syntax and usage of different types of code differs greatly, but most share fundamental structures and concepts. In this course, I'll aim to teach you these fundamentals. The particular type of code we'll use in this course is JavaScript, the programming language that powers many web sites and applications. I've chosen this one because it is readily available, and very easy to demonstrate tangible results with, but the aim here is not really to just teach you JavaScript, but to teach you the underlying principles that apply to pretty much every programming language.</p>
+
+<h2>What are we doing when we write code?</h2>
+
+<p>Regardless of what type of code we write, we write it to control computer systems: this could be because we want to find more information about those systems, give them information/data to process, or give them instructions. In the same way that we can use a language like English, German or Chinese to ask a person questions and give them instructions, we can use a language like JavaScript to ask computers questions and give them instructions.</p>
+
+<p>The computer has to take in this code in some way, read it, and then do something as a result. For the computer to understand the code, it has to be written in the right syntax: the structure of any language is important, for making yourself understood. The syntax of English and other human languages is verbs, nouns, adjectives, etc. The syntax of JavaScript is variables, functions, loops, etc.</p>
+
+<p>The computer will have a piece of software that reads the code you write, works out what to do with it, and then returns a result. This is often called an interpreter, or an engine perhaps. In the case of JavaScript, the interpreter is the web browser you are using. A web browser downloads web pages, interprets the code contained within them (which will usually include some JavaScript), and gives you a web page to look at.</p>
+
+<p class="note">To make sense of this, let's have a quick look at my <a href="javascript-examples/javascript-gradient-image.html">javascript-gradient-image.html</a> example. This simply creates a drawing canvas on the page using the HTML <code>canvas</code> element, then uses JavaScript to place some pixels on the canvas, in this case, a circle filled with a colour gradient, and a copy of the Firefox logo, which it grabs out of an image file. You can view the source of the example by right clicking/Cmd + clicking on the page and selecting the "View Source" or "source" option.</p>
+
+<p>Compiler: Some languages also need a compiler to run: an application that turns code into a package that can then be run to create an output. Flash is an example of a compiled language — you create some Flash source code, then compile it into a Flash Movie. A web browser with the Flash Player plugin installed can then display this Flash movie, which is its own standalone little block; the source code is no longer readable.</p>
+
+<p class="note">Let's now look at a Flash example to see how this works. Open up <a href="flash-example/MayYourBladeBanner468x60_v2.html">my flash example</a>, which is an old advertising banner for my band. If you try to "View source" on the banner, you won't be able to: the code is compiled and locked away.</p>
+
+<p>Interpreted languages are often easier to learn than compiled languages, because with interpreted languages you can just open up the source code and see how it works. You can't do that with compiled languages because the language is converted into a non-human readable form when compiled.</p>
+
+<h2>A quick course in Web</h2>
+
+<p>The web works like so: when you type a web address into your browser, it sends a request to the server that the web site is stored on. The server then sends the files that comprise the web page back to the web browser, which is on the client, aka your computer.</p>
+
+<ul>
+  <li>Client-side languages are languages that are sent to the client, then processed (interpreted and displayed). JavaScript is a client-side language.</li>
+  <li>Server-side languages are languages that are processed on the server before the result is then sent to the client and displayed. Example: PHP.</li>
+</ul>
+
+<div class="exercise">
+<h3>Exercise: server-side vs. client-side</h3>
+
+<p>To illustrate this a bit better, let's look at a basic HTML example, and compare it to a basic PHP example. If we look at the HTML example, we can see that the source code is the same as the code after it has been processed. The PHP however is different on the server to how it is when it has been run in the browser. This is because the PHP is processed on the server and converted to some HTML, whihc is then sent to the browser.</p>
+
+<p>The HTML, on both the client and server:</p>
+
+<pre><code class="language-markup">&lt;h1&gt;This is just simple HTML&lt;/h1&gt;</code></pre>
+
+<p>The PHP on the server:</p>
+
+<pre><code class="language-php">&lt;h1&gt;This is PHP: the current date and time is
+&lt;?php print strftime('%c');?&gt;&lt;/h1&gt;</code></pre>
+
+<p>The PHP on the client:</p>
+
+<pre><code class="language-markup">&lt;h1&gt;This is PHP: the current date and time is
+Sat Jan 18 20:17:27 2014 &lt;/h1&gt;</code></pre>
+
+<p>Server-side and client languages are no better than each other; they have different uses on the Web. Client-side is for displaying and interacting with content; server-side is for storing data, and providing the right data to the client, based on instructions it is given. For example, when you look at Amazon, you are not looking at a different page every time you look at a product. You are looking at the same page, but with different information inserted into it. when you search for a product using the interface displayed to you on the client-side, a query is sent to a database on the server-side, and server-side technologies find and retrieve the correct data that matches your search, and sends it back to the client to be displayed on the page.</p>
+</div>
+
+<h2>JSBin fundamentals</h2>
+
+<p>In this course we'll be typing code into a web site called <a href="http://jsbin.com">JSBin</a> - follow the link now. This is a simulation of a web site, all conveniently stored in the same web page, so we can easily add different types of code and see how they will react together.</p>
+
+<p>Normally, to see the same result you'd have to have to create your own HTML, CSS, JavaScript, etc. files, and load the HTML file in the browser. But here we're not interested in the architecture of web sites. We want to explore programming fundamentals as easily and painlessly as possible, so we're going to use this environment to cut out some of the clutter.</p>
+
+<img src="images/web-directory.jpg" alt="A typical web site directory structure, showing index.html and separate folders for style, script, etc.">
+
+<p>When you first load JSBin, you'll see two separate "panes" — <em>HTML</em> and <em>Output</em>. We will want to make use of the <em>JavaScript</em> and <em>Console</em> panes, so press those two buttons in the top bar of the application.</p>
+
+<p>You'll see two new panes appear. The JavaScript pane is where we will type in our JavaScript code. JSBin then applies that to the HTML document automatically (normally you'd have to do this yourself, which is harder.)</p>
+
+<p>The console pane is used for checking and debugging your code. Don't worry too much about this for now.</p>
+
+<p class="note">You'll also notice, when typing in code in the JavaScript pane, that it gives you messages to tell you what is wrong with your code. This is rather useful!</p>
+
+<p>When you create a new demo in JSBin, it gives your code a unique web address that you can give to other people to check out your demo. Try my example, at <a href="http://jsbin.com/ikuber/2/edit">http://jsbin.com/ikuber/2/edit</a>. You can then click the JSBin button in the top left corner, and choose to clone the example, so you can make edits to your own copy, and even download it as a working HTML page.</p>
+
+<nav>
+  <p><a href="index.html">Main index</a></p>
+  <p>Next:<br><a href="lesson2.html">Variables</a></p>
+</nav>
+
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Share it, make it better, use it for good.</p>
+   
+  </main>
+
+  </body>
+
+  <script src="prism/prism.js"></script>
+</html>
